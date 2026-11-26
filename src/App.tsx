@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowRight, ArrowUpRight, Github, Linkedin, Mail, Shield, Terminal, Crosshair, Radio, Menu, X } from 'lucide-react'
+import { ArrowDownRight, ArrowUpRight, Github, Shield, Terminal, Crosshair, Radio, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
 const projects = [
@@ -81,7 +81,7 @@ function App() {
             </div>
             <div className="hero-meta">
               <div><span className="meta-label">CURRENT ROLE</span><span className="meta-value">Security Engineer</span></div>
-              <div><span className="meta-label">LOCATION</span><span className="meta-value">Spain · Remote</span></div>
+              <div><span className="meta-label">LOCATION</span><span className="meta-value">Spain</span></div>
               <div><span className="meta-label">INTERESTS</span><span className="meta-value">TI / D&R / Automation</span></div>
             </div>
           </div>
@@ -153,8 +153,7 @@ function App() {
           <div><span className="section-kicker">04 / CONTACT</span><h2>Let's connect.</h2><p>Interested in security research, detection, incident investigation, or practical security engineering? Reach out.</p></div>
           <div className="contact-links">
             <a href="https://github.com/JCastro13" target="_blank" rel="noreferrer"><Github size={18} /> GitHub <ArrowUpRight size={15} /></a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><Linkedin size={18} /> LinkedIn <ArrowUpRight size={15} /></a>
-            <a href="mailto:"><Mail size={18} /> Email <ArrowUpRight size={15} /></a>
+            <p className="contact-note">LinkedIn and email details will be added here.</p>
           </div>
         </section>
       </main>
