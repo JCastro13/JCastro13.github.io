@@ -2,6 +2,8 @@
 
 Personal portfolio focused on **Threat Intelligence**, **Detection & Response**, and **Security Engineering**.
 
+Published website: https://jcastro13.github.io
+
 The site is built with React, TypeScript, Vite, and Tailwind CSS, and deployed to GitHub Pages through GitHub Actions.
 
 ## Local development
