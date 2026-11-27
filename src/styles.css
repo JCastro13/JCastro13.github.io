@@ -29,3 +29,32 @@ footer{max-width:1240px;padding:22px 44px 30px;margin:auto;border-top:1px solid 
 .experience-company span{color:var(--dim)}
 .experience-main p{font-size:12px;line-height:1.8;color:var(--muted);margin:13px 0 0;max-width:700px}
 @media(max-width:600px){.experience-row{grid-template-columns:1fr;gap:12px;padding:23px 0}.experience-main h3{font-size:18px}.experience-date{font-size:9px}}
+
+
+.current-role-card{background:linear-gradient(145deg,#101b29,#0b1420);border:1px solid rgba(105,215,223,.22);padding:34px 36px;margin-top:4px}
+.current-role-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding-bottom:25px;border-bottom:1px solid var(--line)}
+.current-role-header h3{font-size:25px;letter-spacing:-.8px;margin:10px 0 6px}
+.at-company{color:#9aabba;font-weight:500}
+.role-team{font:10px var(--mono);letter-spacing:.7px;color:var(--cyan);margin:0}
+.role-overview{font-size:13px;line-height:1.95;color:#b4c1d0;max-width:920px;margin:24px 0 12px}
+.experience-areas{display:grid;grid-template-columns:1fr;gap:0}
+.experience-area{padding:25px 0;border-bottom:1px solid var(--line)}
+.area-heading{display:flex;align-items:center;gap:12px;color:var(--cyan);margin-bottom:13px}
+.area-index{font:10px var(--mono);color:var(--dim)}
+.area-heading h4{font-size:16px;letter-spacing:-.3px;color:var(--text);margin:0}
+.experience-area>p{font-size:12px;line-height:1.9;color:var(--muted);max-width:920px;margin:8px 0}
+.experience-tools,.experience-contribution{padding-top:24px}
+.tools-label{font:9px var(--mono);letter-spacing:1.2px;color:var(--cyan)}
+.experience-tools .tag-list{margin-top:12px}
+.experience-contribution p{font-size:12px;line-height:1.8;color:#b4c1d0;max-width:900px;margin:10px 0 0}
+.previous-role{display:grid;grid-template-columns:220px 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.previous-role h3{font-size:18px;margin:0 0 8px}
+.previous-role-copy p{font-size:12px;line-height:1.8;color:var(--muted);margin:0;max-width:740px}
+@media(max-width:600px){
+  .current-role-card{padding:23px 20px}
+  .current-role-header{flex-direction:column}
+  .current-role-header h3{font-size:21px}
+  .area-heading{align-items:flex-start}
+  .area-heading h4{font-size:14px}
+  .previous-role{grid-template-columns:1fr;gap:12px;padding:23px 0}
+}
