@@ -99,7 +99,7 @@ function App() {
             </div>
             <div className="hero-meta">
               <div><span className="meta-label">CURRENT ROLE</span><span className="meta-value">Security Engineer · Flywire</span></div>
-              <div><span className="meta-label">LOCATION</span><span className="meta-value">Spain</span></div>
+              <div><span className="meta-label">LOCATION / MOBILITY</span><span className="meta-value">Spain · Open to relocate across Europe</span></div>
               <div><span className="meta-label">FOCUS</span><span className="meta-value">TI / D&R / Automation</span></div>
             </div>
           </div>
