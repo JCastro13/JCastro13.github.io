@@ -282,10 +282,6 @@ function App() {
               <span className="tools-label">TOOLS & TECHNOLOGIES</span>
               <div className="tag-list">{tools.map(tool => <span key={tool}>{tool}</span>)}</div>
             </div>
-            <div className="experience-contribution">
-              <span className="tools-label">SELECTED ENGINEERING CONTRIBUTION</span>
-              <p>Acted as a subject-matter contact for Sumo Logic Scheduled Views and led a large-scale implementation, alongside supporting high-priority operational issues.</p>
-            </div>
           </article>
           <article className="previous-role">
             <div className="experience-date">JUL 2024 — DEC 2025</div>
