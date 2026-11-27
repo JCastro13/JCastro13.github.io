@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowUpRight, Linkedin, Shield, Terminal, Crosshair, Radio, Menu, X, Search, Workflow, Activity } from 'lucide-react'
+import { ArrowDownRight, ArrowUpRight, ArrowLeft, Linkedin, Shield, Terminal, Crosshair, Radio, Menu, X, Search, Workflow, Activity, FileText, Layers, Target, BookOpen } from 'lucide-react'
 import { useState } from 'react'
 
 const projects = [
@@ -70,9 +70,99 @@ const tools = ['ZeroFox', 'Sumo Logic', 'TheHive', 'SentinelOne', 'Tines', 'AWS 
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/jesus-castrejon-castro'
 
+
+function ProjectDetail({ project, onBack }: { project: (typeof projects)[number]; onBack: () => void }) {
+  const sections = [
+    ['01', 'THE PROJECT', 'Overview'],
+    ['02', 'START WITH THE WHY', 'Research question'],
+    ['03', 'HOW THE WORK IS DONE', 'Scope & methodology'],
+    ['04', 'SHOW THE WORK', 'Evidence & artifacts'],
+    ['05', 'WHAT THE EVIDENCE SHOWS', 'Findings'],
+    ['06', 'LOOKING BACK', 'Outcome & lessons learned'],
+  ]
+  return (
+    <div className="site-shell project-page-shell">
+      <div className="top-line" />
+      <header className="nav-wrap project-nav">
+        <a className="brand" href="#home" onClick={onBack}><span className="brand-mark">JC<span>.</span></span><span className="brand-caption">SECURITY / RESEARCH</span></a>
+        <button className="back-to-work" onClick={onBack}><ArrowLeft size={16} /> Back to research roadmap</button>
+      </header>
+      <main className="project-detail">
+        <div className="project-breadcrumb">PORTFOLIO <span>/</span> RESEARCH ROADMAP <span>/</span> PROJECT {project.number}</div>
+        <section className="project-detail-hero">
+          <div className="project-detail-copy">
+            <div className="project-detail-eyebrow"><span className="project-kicker-dot" /> {project.type} <span className="eyebrow-divider">/</span> CASE STUDY TEMPLATE</div>
+            <h1>{project.title}</h1>
+            <p className="project-detail-lead">{project.description}</p>
+            <div className="project-detail-pills"><span className="planned-pill">PLANNED PROJECT</span><span className="template-pill">PAGE DESIGN PREVIEW</span></div>
+            <p className="template-disclaimer">This is a visual template. All sections below are placeholders, not completed research or findings.</p>
+          </div>
+          <aside className="project-cover-card">
+            <div className="cover-card-top"><span>PROJECT FILE</span><span>NO. {project.number}</span></div>
+            <div className="cover-graphic"><div className="cover-ring ring-a" /><div className="cover-ring ring-b" /><div className="cover-cross">+</div><div className="cover-icon"><Target size={34} strokeWidth={1.35} /></div></div>
+            <div className="cover-card-bottom"><span>RESEARCH / ENGINEERING</span><span>STATUS: PLANNED</span></div>
+          </aside>
+        </section>
+        <div className="project-detail-layout">
+          <div className="project-detail-content">
+            <section className="case-section" id="overview">
+              <div className="case-section-heading"><span>01</span><div><small>THE PROJECT</small><h2>Overview</h2></div></div>
+              <p className="case-intro-text">A concise explanation of the problem, why it matters, and what this project is intended to demonstrate.</p>
+              <div className="placeholder-panel"><span className="placeholder-label"><FileText size={15} /> PROJECT SUMMARY</span><p>Placeholder — describe the context, motivation, objectives and expected outcome here once the project is underway.</p></div>
+            </section>
+            <section className="case-section" id="question">
+              <div className="case-section-heading"><span>02</span><div><small>START WITH THE WHY</small><h2>Research question</h2></div></div>
+              <div className="question-panel"><span>CORE QUESTION</span><p>What specific question should this investigation or engineering project answer?</p><small>To be defined before the work begins.</small></div>
+            </section>
+            <section className="case-section" id="methodology">
+              <div className="case-section-heading"><span>03</span><div><small>HOW THE WORK IS DONE</small><h2>Scope & methodology</h2></div></div>
+              <p className="case-body-copy">Document the boundaries of the work, data sources, tools and analytical steps. Keep the methodology reproducible and explain important decisions.</p>
+              <div className="method-grid">
+                <article><span>01</span><h3>Define</h3><p>Set the scope, objectives and constraints.</p></article>
+                <article><span>02</span><h3>Collect</h3><p>Record relevant sources, data and evidence.</p></article>
+                <article><span>03</span><h3>Analyse</h3><p>Explain the process, validation and reasoning.</p></article>
+                <article><span>04</span><h3>Report</h3><p>Present supported findings and practical outcomes.</p></article>
+              </div>
+            </section>
+            <section className="case-section" id="evidence">
+              <div className="case-section-heading"><span>04</span><div><small>SHOW THE WORK</small><h2>Evidence & artifacts</h2></div></div>
+              <p className="case-body-copy">This area is reserved for material that helps a reader verify and understand the work.</p>
+              <div className="artifact-grid">
+                <article><div className="artifact-icon"><Layers size={21} /></div><h3>Technical diagram</h3><p>Architecture, attack flow or investigation timeline.</p><span>PLACEHOLDER</span></article>
+                <article><div className="artifact-icon"><BookOpen size={21} /></div><h3>Research notes</h3><p>Sanitised excerpts, observations or analysis tables.</p><span>PLACEHOLDER</span></article>
+                <article><div className="artifact-icon"><FileText size={21} /></div><h3>Supporting files</h3><p>Rules, scripts, report extracts or test evidence.</p><span>PLACEHOLDER</span></article>
+              </div>
+            </section>
+            <section className="case-section" id="findings">
+              <div className="case-section-heading"><span>05</span><div><small>WHAT THE EVIDENCE SHOWS</small><h2>Findings</h2></div></div>
+              <div className="findings-placeholder"><span>NO FINDINGS PUBLISHED</span><p>This section will contain only conclusions supported by the collected evidence. Nothing has been added yet.</p></div>
+            </section>
+            <section className="case-section" id="takeaways">
+              <div className="case-section-heading"><span>06</span><div><small>LOOKING BACK</small><h2>Outcome & lessons learned</h2></div></div>
+              <p className="case-body-copy">Summarise what was achieved, what changed as a result, what limitations remain and what you would improve next time.</p>
+              <div className="placeholder-panel"><span className="placeholder-label"><Target size={15} /> FINAL TAKEAWAYS</span><p>Placeholder — complete this section after the project has been carried out and reviewed.</p></div>
+            </section>
+          </div>
+          <aside className="project-detail-sidebar">
+            <div className="sidebar-card sidebar-toc"><span className="sidebar-title">ON THIS PAGE</span>{sections.map((s, i) => <a key={s[0]} href={['#overview','#question','#methodology','#evidence','#findings','#takeaways'][i]}>{s[2]}</a>)}</div>
+            <div className="sidebar-card"><span className="sidebar-title">PROJECT DETAILS</span><div className="sidebar-detail"><small>STATUS</small><strong>Planned</strong></div><div className="sidebar-detail"><small>TYPE</small><strong>{project.type}</strong></div><div className="sidebar-detail"><small>PUBLICATION</small><strong>Not published</strong></div><div className="sidebar-detail"><small>EVIDENCE</small><strong>Not added yet</strong></div></div>
+            <div className="sidebar-card"><span className="sidebar-title">TOPICS & TOOLS</span><div className="sidebar-tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>
+            <div className="sidebar-note">A good case study should show not just what was done, but how the reasoning and evidence led to the result.</div>
+          </aside>
+        </div>
+        <div className="project-detail-footer"><button className="back-to-work" onClick={onBack}><ArrowLeft size={16} /> Back to all projects</button><span>PROJECT TEMPLATE / {project.number}</span></div>
+      </main>
+      <footer><a className="footer-brand" href="#home" onClick={onBack}>JC<span>.</span></a><span>INDEPENDENT SECURITY RESEARCH & ENGINEERING</span><span>© {new Date().getFullYear()} J. CASTRO</span></footer>
+    </div>
+  )
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [selectedProject, setSelectedProject] = useState<(typeof projects)[number] | null>(null)
   const closeMenu = () => setMenuOpen(false)
+
+  if (selectedProject) return <ProjectDetail project={selectedProject} onBack={() => setSelectedProject(null)} />
 
   return (
     <div className="site-shell">
@@ -149,8 +239,8 @@ function App() {
 
         <section className="content-section work-section" id="work">
           <div className="section-heading">
-            <div><span className="section-kicker">02 / SELECTED WORK</span><h2>Built on curiosity.</h2></div>
-            <p className="section-aside">Independent research and engineering projects. Each will document its methodology, evidence, findings and lessons learned.</p>
+            <div><span className="section-kicker">02 / RESEARCH ROADMAP</span><h2>Ideas into evidence.</h2></div>
+            <p className="section-aside">A preview of the research and engineering work I plan to publish. Open any entry to see the structure of a full project case study.</p>
           </div>
           <div className="project-list">
             {projects.map(project => <article className="project-row" key={project.number}>
@@ -159,10 +249,10 @@ function App() {
                 <span className="project-type">{project.type}</span><h3>{project.title}</h3><p>{project.description}</p>
                 <div className="tag-list">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
               </div>
-              <div className="project-side"><span className="project-status"><i /> {project.status}</span></div>
+              <div className="project-side"><span className="project-status"><i /> {project.status}</span><button className="project-preview-link" onClick={() => setSelectedProject(project)}>Preview case study <ArrowUpRight size={15} /></button></div>
             </article>)}
           </div>
-          <p className="work-note"><span>NOTE</span> Project entries are placeholders for work in progress. No findings or completed research are claimed here.</p>
+          <p className="work-note"><span>NOTE</span> These entries are planned projects. The case-study pages are structural previews only; no completed work or findings are claimed.</p>
         </section>
 
         <section className="content-section experience-section" id="experience">
