@@ -71,7 +71,7 @@ const tools = ['ZeroFox', 'Sumo Logic', 'TheHive', 'SentinelOne', 'Tines', 'AWS 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/jesus-castrejon-castro'
 
 
-function ProjectDetail({ project, onBack }: { project: (typeof projects)[number]; onBack: () => void }) {
+export function ProjectDetail({ project, onBack }: { project: (typeof projects)[number]; onBack: () => void }) {
   const sections = [
     ['01', 'THE PROJECT', 'Overview'],
     ['02', 'START WITH THE WHY', 'Research question'],
@@ -159,10 +159,7 @@ function ProjectDetail({ project, onBack }: { project: (typeof projects)[number]
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [selectedProject, setSelectedProject] = useState<(typeof projects)[number] | null>(null)
   const closeMenu = () => setMenuOpen(false)
-
-  if (selectedProject) return <ProjectDetail project={selectedProject} onBack={() => setSelectedProject(null)} />
 
   return (
     <div className="site-shell">
@@ -177,7 +174,7 @@ function App() {
         </button>
         <nav className={menuOpen ? 'nav-links open' : 'nav-links'}>
           <a href="#focus" onClick={closeMenu}>Focus</a>
-          <a href="#work" onClick={closeMenu}>Selected work</a>
+          <a href="#work" onClick={closeMenu}>Future projects</a>
           <a href="#experience" onClick={closeMenu}>Experience</a>
           <a href="#about" onClick={closeMenu}>About</a>
           <a className="nav-contact" href="#contact" onClick={closeMenu}>Get in touch <ArrowUpRight size={14} /></a>
@@ -191,7 +188,7 @@ function App() {
             <h1>Understanding threats.<br /><em>Engineering</em> security.</h1>
             <p className="hero-lead">I’m a Security Engineer at Flywire working across Detection & Response, Threat Intelligence and security automation. My work includes investigating suspicious external domains and potential brand abuse, assessing phishing and malware risks, and improving security workflows through engineering.</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#work">Explore selected work <ArrowDownRight size={16} /></a>
+              <a className="button button-primary" href="#work">Explore future projects <ArrowDownRight size={16} /></a>
               <a className="text-link" href={LINKEDIN_URL} target="_blank" rel="noreferrer">Connect on LinkedIn <ArrowUpRight size={15} /></a>
             </div>
             <div className="hero-meta">
@@ -239,8 +236,8 @@ function App() {
 
         <section className="content-section work-section" id="work">
           <div className="section-heading">
-            <div><span className="section-kicker">02 / RESEARCH ROADMAP</span><h2>Ideas into evidence.</h2></div>
-            <p className="section-aside">A preview of the research and engineering work I plan to publish. Open any entry to see the structure of a full project case study.</p>
+            <div><span className="section-kicker">02 / RESEARCH ROADMAP</span><h2>Future projects.</h2></div>
+            <p className="section-aside">Research and engineering ideas I plan to develop and publish. These are future projects, not completed work or published case studies.</p>
           </div>
           <div className="project-list">
             {projects.map(project => <article className="project-row" key={project.number}>
@@ -249,10 +246,10 @@ function App() {
                 <span className="project-type">{project.type}</span><h3>{project.title}</h3><p>{project.description}</p>
                 <div className="tag-list">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
               </div>
-              <div className="project-side"><span className="project-status"><i /> {project.status}</span><button className="project-preview-link" onClick={() => setSelectedProject(project)}>Preview case study <ArrowUpRight size={15} /></button></div>
+              <div className="project-side"><span className="project-status"><i /> FUTURE PROJECT</span></div>
             </article>)}
           </div>
-          <p className="work-note"><span>NOTE</span> These entries are planned projects. The case-study pages are structural previews only; no completed work or findings are claimed.</p>
+          <p className="work-note"><span>NOTE</span> These are ideas for future work. Project pages will be published only when there is real research, implementation or evidence to share.</p>
         </section>
 
         <section className="content-section experience-section" id="experience">
