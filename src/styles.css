@@ -156,3 +156,32 @@ footer{max-width:1240px;padding:22px 44px 30px;margin:auto;border-top:1px solid 
  .method-grid{grid-template-columns:repeat(2,1fr)}.artifact-grid{grid-template-columns:1fr}.artifact-grid article{min-height:150px}
  .sidebar-toc{grid-template-columns:repeat(2,1fr)}
 }
+
+
+/* Hero refinement: calmer hierarchy and a more balanced first viewport */
+@media (min-width: 851px) {
+  .hero {
+    max-width: 1320px;
+    padding-top: 82px;
+    padding-bottom: 58px;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+    column-gap: 48px;
+  }
+  .hero h1 {
+    font-size: clamp(44px, 3.6vw, 58px);
+    letter-spacing: -3.2px;
+    line-height: 1.06;
+    margin: 23px 0 20px;
+  }
+  .hero-actions { margin-top: 27px; }
+  .hero-meta { margin-top: 52px; }
+  .hero-visual { height: 405px; }
+  .hero-index { margin-top: 40px; }
+}
+
+@media (min-width: 851px) and (max-width: 1100px) {
+  .hero { column-gap: 34px; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); }
+  .hero h1 { font-size: clamp(42px, 4.2vw, 48px); letter-spacing: -2.7px; }
+  .hero-meta { gap: 18px; }
+  .meta-value { font-size: 10px; }
+}
